@@ -59,13 +59,18 @@ body {
     position: relative;
 }
 
+.actionInput__suggestions .btn {
+    margin: 7px 1px;
+    border-width: 3px;
+    border-radius: 6px;
+}
+
 .actionItems {
-    height: 200px;
     background-color: peachpuff;
 }
 
 .actionItem__item {
-    /* height: 40px;*/
+    height: 40px;
     background-color: gray;
     margin: 3px;
 }
@@ -85,7 +90,7 @@ body {
 
 .actionInput__inputContainer .input-group-lg>.form-control {
     background-color: #f6f6f6;
-    height: 60px;
+    height: 40px;
     border-radius: 10px;
     border: 3px solid rgba(151, 151, 151, 0.625273);
     color: #727272;
