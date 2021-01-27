@@ -1,25 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="packages/bootstrap.min.css">
+<link rel="stylesheet" href="packages/popup.css">
 
 <head>
 
-    <title>Document</title>
+    <title>Chrome Extension To Do</title>
 </head>
 
 <body>
     <div class="container-fluid main">
-        <div class="row">
-            <div class="col greeting"></div>
+        <div class="row greet">
+            <div class="col greeting">
+
+                <h2 class="greeting__type">Good Morning,</h2>
+                <h2 class="greeting__name">Valeria</h2>
+
+                <div class="greeting__img">
+                    <img src="images/good-morning.png" alt="" id="greeting__image">
+                </div>
+
+            </div>
+        </div>
+        <div class="row progress">
+            <div class="col progressContainer">
+                <div id="container"></div>
+            </div>
+        </div>
+        <div class="row action">
+            <div class="col actionInput">
+                <h2>Today's plan of action</h2>
+                <input type="text" placeholder="+        Add Action Item press Enter">
+            </div>
         </div>
         <div class="row">
-            <div class="col progressContainer"></div>
-        </div>
-        <div class="row">
-            <div class="col actionInput"></div>
-        </div>
-        <div class="row">
-            <div class="col actionItems"></div>
+            <div class="col actionItems">
+                <div class="actionItem__item"></div>
+                <div class="actionItem__item"></div>
+            </div>
         </div>
     </div>
 
@@ -28,6 +46,8 @@
 
     <script src="./packages//jquery-3.5.1.min.js"></script>
     <script src="./packages/bootstrap.min.js"></script>
+    <script src="./packages/progressbar.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
