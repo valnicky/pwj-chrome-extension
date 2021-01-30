@@ -59,22 +59,6 @@ body {
     position: relative;
 }
 
-.actionInput__suggestions .btn {
-    margin: 7px 1px;
-    border-width: 3px;
-    border-radius: 6px;
-}
-
-.actionItems {
-    background-color: peachpuff;
-}
-
-.actionItem__item {
-    height: 40px;
-    background-color: gray;
-    margin: 3px;
-}
-
 .actionInput__text {
     text-transform: uppercase;
     font-size: 1rem;
@@ -99,4 +83,90 @@ body {
 .actionInput__inputContainer .form-control:focus {
     border-color: none;
     box-shadow: 0 0 0 0.2rem rgba(170, 214, 160, .25);
+}
+
+.actionInput__suggestions .btn {
+    margin-top: 7px;
+    border-width: 3px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.8em;
+}
+
+.actionInput__suggestions .btn-outline-dark {
+    color: rgba(151, 151, 151, .63);
+    border-color: rgba(151, 151, 151, 0.625273);
+}
+
+.actionInput__suggestions .btn-outline-dark:hover {
+    background-color: rgba(151, 151, 151, .63);
+    color: #fff;
+}
+
+.actionInput__suggestions .btn-outline-dark:focus {
+    box-shadow: none;
+}
+
+.actionInput__suggestions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.actionItems {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.actionItem__item {
+    background: #F6F6F6;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin-top: 12px;
+    width: 100%;
+}
+
+.actionItem__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.actionItem__text {
+    word-break: break-word;
+    text-align: center;
+    flex: 1;
+    color: #727272;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.actionItem__checkBox {
+    border: 3px solid rgba(151, 151, 151, 0.27);
+    width: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.actionItem__delete {
+    border-radius: 6px;
+    text-align: center;
+    width: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: 3px solid rgba(151, 151, 151, 0.27);
+    color: rgba(151, 151, 151, 0.27);
+}
+
+.actionItem__checkBox i {
+    color: #AAD6A0;
+}
+
+.actionItem__check {
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
 }
