@@ -1,16 +1,82 @@
 let addItemForm = document.querySelector('#addItemForm');
 let itemsList = document.querySelector('.actionItems');
+//let storage = chrome.storage.sync;
+
+//chrome.storage.sync.clear();
+
+storage.get(['actionItems'], (data) => {
+    let actionItems = data.actionItems;
+    renderActionItems(actionItems);
+});
+
+const renderActionItems = (actionItems) => {
+    actionItems.forEach((item) => {
+        renderActionItem(item.text, item.id, item.completed);
+    });
+}
 
 addItemForm.addEventListener('submit', (e) => {
     e.preventDefault();
     let itemText = addItemForm.elements.namedItem('itemText').value;
     if (itemText) {
+        add(itemText);
         renderActionItem(itemText);
         addItemForm.elements.namedItem('itemText').value = '';
     }
 
 });
-const renderActionItem = (text) => {
+
+const add = (text) => {
+    let actionItem = {
+        id: uuidv4(),
+        added: new Date().toString(),
+        text: text,
+        completed: null
+    }
+
+
+
+    chrome.storage.sync.get(['actionItems'], (data) => {
+        //   console.log(data);
+        let items = data.actionItems;
+        if (!items) {
+            items = [actionItem];
+        } else {
+            items.push(actionItem);
+        }
+
+        chrome.storage.sync.set({
+            actionItems: items
+        }, () => {
+            chrome.storage.sync.get(['actionItems'], (data) => {
+                console.log(data);
+            });
+        });
+    });
+}
+
+const markUnmarkCompleted = () => {
+    storage.get(['actionItems'], (data) => {
+        let items = data.actionItems;
+        let foundItemIndex = items.findIndex((item) => {
+            item.id == id;
+        });
+        if (foundItemIndex >= 0) {
+            items[foundItemIndex].completed = true;
+            chrome.storage.sync.set({ actionItems: items })
+        }
+    });
+}
+
+const handleCompletedEventListener = (e) => {
+    //console.log(e.target);
+    const i e.target.parentElement.parentElement.getAttribute('data-id');
+    const parent = e.target.parentElement.parentElement;
+    parent.classList.add('completed');
+    markUnmarkCompleted(id);
+}
+
+const renderActionItem = (text, id) => {
 
     let element = document.createElement('div');
     element.classList.add('actionItem__item');
@@ -26,6 +92,13 @@ const renderActionItem = (text) => {
     checkEl.innerHTML = ` <div class="actionItem__checkBox">
                                 <i class="fas fa-check" aria-hidden="true"></i>
                             </div>`
+
+    if (completed) {
+        element.classList.add('completed');
+    }
+
+    element.setAttribute('data-id', id);
+    checkEl.addEventListener('click', handleCompletedEventListener);
 
     textEl.textContent = text;
 

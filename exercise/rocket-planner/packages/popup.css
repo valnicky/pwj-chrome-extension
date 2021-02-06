@@ -1,6 +1,7 @@
 body {
     width: 450px;
-    height: 562px;
+    min-height: 562px;
+    padding: 12px 12px 27px 12px;
 }
 
 .greeting {
@@ -34,6 +35,7 @@ body {
 
 .greeting__img img {
     width: 100%;
+    filter: drop-shadow(2px 0px 4px #222);
 }
 
 .greet {
@@ -120,7 +122,8 @@ body {
 }
 
 .actionItem__item {
-    background: #F6F6F6;
+    background-color: #f6f6f6;
+    /*#b0f1ab;*/
     border-radius: 10px;
     padding: 0.5rem;
     margin-top: 12px;
@@ -148,6 +151,16 @@ body {
     text-align: center;
     border-radius: 6px;
     cursor: pointer;
+    color: #b0f1ab;
+}
+
+.actionItem__item.completed {
+    background-color: #b0f1ab;
+    ;
+}
+
+.actionItem__item.completed .actionItem__checkBox {
+    border-color: #b0f1ab;
 }
 
 .actionItem__delete {
@@ -162,6 +175,11 @@ body {
 
 .actionItem__checkBox i {
     color: #AAD6A0;
+    opacity: 0;
+}
+
+.actionItem__checkBox:hover i {
+    opacity: 1;
 }
 
 .actionItem__check {
@@ -169,4 +187,8 @@ body {
     display: flex;
     justify-content: center;
     cursor: pointer;
+}
+
+.actionItem__check {
+    pointer-events: none;
 }

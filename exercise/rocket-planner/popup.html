@@ -22,9 +22,9 @@
 
             </div>
         </div>
-        <div class="row progress">
-            <div class="col progressContainer">
-                <div id="container"></div>
+        <div class="row progress mb-4">
+            <div class="col progressContainer progress-container">
+                <div id="progress-bar"></div>
             </div>
         </div>
         <div class="row action">
@@ -36,22 +36,27 @@
                             <input name="itemText" class="form-control" aria-label="Large" type="text" placeholder="+   Add Action Item press Enter"></div>
                     </form>
                     <div class="actionInput__suggestions">
-                        <button type="button" class="btn btn-sm btn-outline-dark">+ Squats/Stretching/kgl</button>
-                        <button type="button" class="btn btn-sm btn-outline-dark">+ Codewar</button><button type="button" class="btn btn-sm btn-outline-dark">+ YouTube</button>
+                        <button type="button" class="btn btn-sm btn-outline-dark"> <i class="fas fa-plus"></i> Squats/Stretching/kgl</button>
+                        <button type="button" class="btn btn-sm btn-outline-dark"> <i class="fas fa-plus"></i> Codewar</button><button type="button" class="btn btn-sm btn-outline-dark"> <i class="fas fa-plus"></i> YouTube</button>
 
                     </div>
 
                 </div>
             </div>
+            <div class="row">
+                <div class="col actionItems">
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col actionItems">
-                <div class="actionItem__item ">
+                <div class="actionItem__item completed">
                     <div class="actionItem__main">
                         <div class="actionItem__check">
                             <div class="actionItem__checkBox">
                                 <i class="fas fa-check" aria-hidden="true"></i>
                             </div>
+
                         </div>
                         <div class="actionItem__text">Hacker Rank</div>
                         <div class="actionItem__delete"><i class="fas fa-times"></i></div>
@@ -60,14 +65,21 @@
                 </div>
 
                 <div class="actionItem__item ">
-                    <div class="actionItem__main">Udemy videos</div>
+                    <div class="actionItem__main">
+                        <div class="actionItem__check">
+                            <div class="actionItem__checkBox">
+                                <i class="fas fa-check" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="actionItem__text">Udemy videos</div>
+                        <div class="actionItem__delete"><i class="fas fa-times"></i></div>
+                    </div>
+
+
                 </div>
-                <div class="actionItem__item ">
-                    <div class="actionItem__main"></div>
-                </div>
-                <div class="actionItem__item ">
-                    <div class="actionItem__main"></div>
-                </div>
+
+
             </div>
 
         </div>
@@ -77,7 +89,11 @@
     <script src="./packages/bootstrap.min.js"></script>
     <script src="./packages/progressbar.js"></script>
     <script src="./packages/fontawesome.js"></script>
+    <script src="./packages/uuidv4.min.js"></script>
+    <script src="./js/circle.js"></script>
+    <script src="./js/action-items-utils.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./packages/fontawesome.js"></script>
 </body>
 
 </html>
